@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 实现一个DAO 接口  通过MyBatis.xml找到 -->
+<mapper namespace="com.dq.dao.LoginDao">
+
+	<!-- 取得用户列表   id:方法名(查询的作用) resultType：方法的返回值     parameterType：写模糊查询时，传值能用得到  -->
+	<select id="getLogin" resultType="Login" parameterType="Login">
+		select lid, lusername, lpassword from login
+		<!-- <where>标签：MyBatis里的判断处理文件 ，不是必须有的   若传值(if) ,才能拼到sql语句中 -->
+		<!--  <where>
+			<if test="lusername != null and lusername != null">
+				lusername =#{lusername} and lusername =#{lusername}
+			</if>
+			<if test="lid!=null">
+				and lid=#{lid}
+			</if>
+		</where>  -->
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
